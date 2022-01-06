@@ -92,7 +92,7 @@ export default {
           type: 'is-success'
         })
         this.$eventBus.emit('logRequest');
-        this.$eventBus.$emit('tokenvalid');
+        this.$eventBus.emit('tokenvalid');
       } catch (error) {
         this.msg = error.response.data.msg;
       }
@@ -111,8 +111,8 @@ export default {
           message: 'Account added!',
           type: 'is-success'
         })
-        this.$eventBus.$emit('logRequest');
-        this.$eventBus.$emit('tokenvalid');
+        this.$eventBus.emit('logRequest');
+        this.$eventBus.emit('tokenvalid');
       } catch (error) {
         this.msg = error.response.data.msg;
       }

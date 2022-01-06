@@ -20,6 +20,8 @@
 
 <script>
 import movieService from '../services/MovieService';
+import authService from '../services/AuthService';
+import AuthService from "../services/AuthService";
 // import favorite from '../components/Favourites';
 
 export default {
@@ -50,12 +52,24 @@ export default {
           );
     },
     async getSearchedMovies(query){
-        movieService.getSearchedMovie(query)
-        .then(
-            (videos => {
-              this.movies = videos.data;
-            })
-        );
+      if (this.$store.getters.isLoggedIn) {
+        const status = await AuthService.checkToken(this.$store.getters.isLoggedIn)
+        if (status === 403 || status === 401 ) {
+          this.$buefy.toast.open({
+            message: 'Please log in again',
+            type: 'is-danger'
+          })
+          this.$eventBus.emit('tokeninvalid')
+        }
+        if (status === 200) {
+          movieService.getSearchedMovie(query)
+              .then(
+                  (videos => {
+                    this.movies = videos.data;
+                  })
+              );
+        }
+      }
     },
     setThumbnail(video){
       if (video.poster_path) {
