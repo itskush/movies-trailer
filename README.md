@@ -1,7 +1,7 @@
 # Movie Trailes App
 ````
 Follow steps below to run application locally
-Live example at --
+Live example at itsankush.com
 ````
 ## Project setup
 ```
