@@ -137,7 +137,7 @@ export default {
   background: #000;
   color: #fff;
   border-radius: 6px;
-  width: 45%;
+  width: 41%;
   padding: 2rem;
   position: fixed;
   overflow-y: scroll;
