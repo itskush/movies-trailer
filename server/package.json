@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
+    "migrate": "npx sequelize db:migrate",
     "build": "cd client && npm i && npm run build",
     "test": "jest --detectOpenHandles --forceExit --timeout=10000"
   },
