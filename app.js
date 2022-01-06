@@ -1,4 +1,3 @@
-var createError = require('http-errors');
 var express = require('express');
 const serveStatic = require('serve-static')
 var path = require('path');
