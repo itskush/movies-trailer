@@ -5,6 +5,13 @@ Live example at --
 ````
 ## Project setup
 ```
+Pre-requisites
+
+You will need a TMDB api key from
+https://developers.themoviedb.org/3/getting-started/introduction
+
+Set up a local mysql server
+
 npm i from root folder
 ```
 
