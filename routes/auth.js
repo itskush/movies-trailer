@@ -8,8 +8,8 @@ const authJwt = require('../middleware/authJwt')
 
 router.post('/login', userController.login)
 router.post("/refreshtoken", userController.refreshToken);
-router.post("/checktoken", authJwt.verifyToken,(res,req) => {
-    return res.send({
+router.post("/checktoken", authJwt.verifyToken,(req,res) => {
+    return res.status(200).send({
         message: "Success"
     });
 });

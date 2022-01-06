@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const MovieDB = require("node-themoviedb");
 const mdb = new MovieDB(process.env.TMDB_API_KEY);
-
+const authJwt = require('../middleware/authJwt')
 const { getVideo, getExternalIds, searchMovie } = require( '../utils/helpers')
 
 router.get('/popular/', async function(req, res, next) {
@@ -32,7 +32,7 @@ router.get('/single/:id', async function(req, res, next) {
 
 
 /* GET users listing. */
-router.get('/search/:query', async function(req, res, next) {
+router.get('/search/:query', authJwt.verifyToken, async function(req, res, next) {
     const response = await searchMovie(req.params.query)
     res.send({data:response.results.slice(0, 12)});
 });

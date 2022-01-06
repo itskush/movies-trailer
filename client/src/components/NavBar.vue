@@ -39,8 +39,6 @@
 </template>
 
 <script>
-// import DataService from "../services/DataService";
-// import { EventBus } from '@/event-bus';
 export default {
   name: 'NavBar',
   data() {
