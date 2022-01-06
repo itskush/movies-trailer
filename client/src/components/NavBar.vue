@@ -59,6 +59,7 @@ export default {
     logmeout(){
       this.$store.dispatch('logout');
       this.$eventBus.emit('logRequest');
+      this.showLogOut = false;
     },
   },
   mounted() {
