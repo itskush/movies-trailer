@@ -20,7 +20,6 @@
 
 <script>
 import movieService from '../services/MovieService';
-import authService from '../services/AuthService';
 import AuthService from "../services/AuthService";
 // import favorite from '../components/Favourites';
 
