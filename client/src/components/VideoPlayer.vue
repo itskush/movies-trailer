@@ -166,6 +166,7 @@ export default {
 .right-side{
   width:100%;
   margin-right: 1rem;
+  margin-top: 1.5rem;
   @media (max-width:980px) {
     position: absolute;
     z-index: 1;
