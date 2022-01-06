@@ -18,7 +18,6 @@ const verifyToken = (req, res, next) => {
         });
     }
     jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
-        console.log('test')
         if (err) {
             return catchError(err, res);
         }
