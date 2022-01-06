@@ -87,7 +87,7 @@ export default {
             this.video = videos.data;
             this.cast = videos.cast;
             this.externals = videos.externals;
-            this.videoId = videos.trailer[0].src
+            this.videoId = videos.trailer? videos.trailer[0].src : 0;
           })
       );
     })
