@@ -30,6 +30,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+db.sequelize.sync()
+
 app.use('/api/movies', moviesRouter);
 app.use('/api/auth', authRouter);
 app.use('/', serveStatic(path.join(__dirname, '/client/dist')))
@@ -38,11 +40,9 @@ app.get(/.*/, function (req, res) {
   res.sendFile(path.join(__dirname, 'client/dist/index.html'))
 })
 
-if (process.env.NODE_ENV !== 'test') {
-  app.listen(port, function(){
-    console.log(`Listening on port: ${port}`)
-    db.sequelize.sync()
-  });
-}
+app.listen(port, function(){
+  console.log(`Listening on port: ${port}`)
+});
+
 
 module.exports = app;
