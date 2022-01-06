@@ -37,7 +37,7 @@ npm run migrate
 npm run start and go on localhost:3000 on a browser
 example endpoint:
 localhost:3000/api/movies/search/{{query}}
-
+Search is disabled for guest, you need to login/have an account to be able to search
 ```
 
 ### TODO To run some tests on the api
